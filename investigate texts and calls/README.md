@@ -63,9 +63,13 @@ Include all the code that you need for each task in that file.
 
 The solution outputs for each file should be the print statements described in the instructions. Feel free to use other print statements during the development process, but remember to remove them for submission - the submitted files should print only the solution outputs.
 
+Step 3
+---------
+Use the [rubric](https://github.com/udacity/cn-python-foundation/blob/master/investigate%20texts%20and%20calls/rubric.md) to check your work before submission. A Udacity Reviewer will give feedback on your work based on this rubric and will leave helpful comments on your code.
+
 Submission
 ======
-Submit a zip file named as **submit.zip** with **ONLY** the following files
+Submit a zip file named as **submit.zip** with **ONLY** the following files:
 
 - Task0.py
 - Task1.py
