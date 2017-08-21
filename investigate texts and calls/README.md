@@ -38,12 +38,19 @@ About the data
 The text and call data are provided in csv files. In each file, the data is already read and stored as lists of lists. 
 
 Each sub-list of the list of texts is structured in this way:
+
 ```
-a text = [Sending telephone number (string), receiving telephone number (string), timestamp of text message (string)]
+a text = [	Sending telephone number (string),
+			receiving telephone number (string), 
+			timestamp of text message (string)]
 ```
 Each element in the list of phone calls is structured in this way:
+
 ```
-a call = [Calling telephone number (string), receiving telephone number (string), start timestamp of telephone call (string), duration of telephone call in seconds (string)]
+a call = [	Calling telephone number (string), 
+			receiving telephone number (string), 
+			start timestamp of telephone call (string),
+			duration of telephone call in seconds (string)]
 ```
 
 All telephone numbers are 10 numerical digits long. Each telephone number starts with a code indicating the location and/or type of the telephone number.
