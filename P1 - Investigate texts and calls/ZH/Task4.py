@@ -1,15 +1,15 @@
 """
-Intro to Python Lab 1, Task 4
+Python入门 项目 1, 任务 0
 
-Complete each task in the file for that task. Submit the whole folder
-as a zip file or GitHub repo. 
-Full submission instructions are available on the Lab Preparation page.
+完成该任务的文件中的每个任务. 以压缩文件提交整个文件夹或是GitHub repo。
+在项目准备页面上有完整的提交说明。
 """
 
+
 """
-Read file into texts and calls. 
-It's ok if you don't understand how to read files
-You will learn more about reading files in future lesson
+读取短信与电话。
+如果你不知道如何读取文件，也是可以的
+您将在以后的课程中了解更多有关阅读文件的知识
 """
 import csv
 
@@ -22,15 +22,16 @@ with open('calls.csv', 'r') as f:
     calls = list(reader)
 
 """
-TASK 4:
-The telephone company want to identify numbers that might be doing
-telephone marketing. Create a set of possible telemarketers: 
-these are numbers that make outgoing calls but never send texts,
-receive texts or receive incoming calls.
+任务4:
+电话公司希望辨认出可能正在用于进行电话推销的电话号码。
+找出所有可能的电话推销员: 
+这样的电话总是向其他人拨出电话，
+但从来不发短信，接收短信，或是收到来电
 
-Print a message: 
-"These numbers could be telemarketers: "
-<list of numbers>
-The list of numbers should be print out one per line in lexicographic order with no duplicates.
+
+请输出如下内容
+"如下电话号码可能是电话推销员："
+<电话列表>
+代码列表应该无重复，每行一条，并以字典序输出。
 """
 

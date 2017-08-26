@@ -1,8 +1,8 @@
-| Criteria| Meets Specifications|
-| ------------- |:-------------|
-| code quality      | Your code should be well-structured and readable, following best practices explained in the course. |
-| Task 0 successful | The script correctly prints out the infomation of first record of texts and last record of calls      |
-| Task 1 successful | The script correctly prints number of distinct telephone numbers in the dataset.      |
-| Task 2 successful |The script correctly prints the telephone number that spent the longest time on the phone and the the total time in seconds they spend on phone call.|
-| Task 3 successful |The script correctly prints the telephone codes called by fixed-line numbers in Bangalore and the proportion of calls from fixed lines in Bangalore that are to fixed lines in Bangalore.      |
-| Task 4 successful |The script correctly prints the list of numbers that could be telemarketers.     |
+| 标准| 符合规范|
+| -------------	 |:-------------|
+| 代码品质		 | 你的代码应具有良好的结构与可读性,请遵循本课程所指出的最佳规范.		 				|
+| 任务0成功完成	 | 脚本正确的输出了第一条短信与最后一次电话的信息			      						|
+| 任务1成功完成	 | 脚本正确的输出了数据集中不同种类的电话号码的数目 				 				 	|
+| 任务2成功完成	 | 脚本正确的输出了拨打了最长时间电话的电话号码，以及他们在电话上所花费的总时长（秒）	|
+| 任务3成功完成	 | 脚本正确的输出由位于班加罗尔的固定电话打出的电话号码，以及由班加罗尔固话打往班加罗尔的电话所占比例      |
+| 任务4成功完成	 | 脚本正确的输出了可能是电话推销员的数字列表。     |
