@@ -1,15 +1,15 @@
 """
-Intro to Python Lab 1, Task 2
+Python入门 项目 1, 任务 0
 
-Complete each task in the file for that task. Submit the whole folder
-as a zip file or GitHub repo. 
-Full submission instructions are available on the Lab Preparation page.
+完成该任务的文件中的每个任务. 以压缩文件提交整个文件夹或是GitHub repo。
+在项目准备页面上有完整的提交说明。
 """
 
+
 """
-Read file into texts and calls. 
-It's ok if you don't understand how to read files
-You will learn more about reading files in future lesson
+读取短信与电话。
+如果你不知道如何读取文件，也是可以的
+您将在以后的课程中了解更多有关阅读文件的知识
 """
 import csv
 with open('texts.csv', 'r') as f:
@@ -21,18 +21,13 @@ with open('calls.csv', 'r') as f:
     calls = list(reader)
 
 """
-TASK 2: Which telephone number spent the longest time on the phone
-during the period? Don't forget that time spent answering a call is
-also time spent on the phone.
-Print a message: 
-"<telephone number> spent the longest time, <total time> seconds, on the phone during 
-September 2016.". 
+任务2: 哪个电话号码的通话总时间最长? 不要忘记，用于接听电话的时间也是通话时间的一部分。
+输出信息: 
+"自2016年9月起，<谁的电话号码>的通话总时间最长, 总时长<多少> 秒。"
 
-HINT: Build a dictionary with telephone numbers as keys, and their
-total time spent on the phone as the values. You might find it useful
-to write a function that takes a key and a value and modifies a 
-dictionary. If the key is already in the dictionary, add the value to
-the key's existing value. If the key does not already appear in the
-dictionary, add it and set its value to be the given value.
+提示: 建立一个字典，并以电话号码为键，通话总时长为值。
+这有利于你书写一个以键值对为输入，并修改字典的函数。
+如果键已经存在于字典内，为键所对应的值加上对应数值；
+如果键不存在于字典内，将此键加入字典，并将它的值设为给定值。
 """
 
