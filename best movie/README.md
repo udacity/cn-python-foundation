@@ -31,7 +31,7 @@ https://movie.douban.com/tag/#/?sort=S&range=9,10&tags=电影
 https://movie.douban.com/tag/#/?sort=S&range=9,10&tags=电影,剧情,美国
 ```
 
-任务1: 实现函数构造对应类型和地区的URL地址 
+实现函数构造对应类型和地区的URL地址 
 
 ```
 """
@@ -41,9 +41,31 @@ def getMovieUrl(category, location)
 	url = None
 	retrun url
 ```
+任务2: 获取电影页面 HTML
+-----
+获得URL后，我们可以获取 URL 对应页面的 HTML
+
+在课程中，我们使用库 `requests` get 函数。
+
+```
+def getHtml(url):
+	import requests
+	response = requests.get(url)
+	html = response.text
+	return html
+```
+
+这样的做法对大多数豆瓣电影列表页面来说没什么问题。但有些列表需要多页显示，我们需要不断模拟点击**加载更多**按钮来显示这个列表上的全部电影。
+
+这个任务虽然不难，但并不是课程的重点。因此我们已经为你完成了这个任务。你只需要导入我们已经写好的文件，并调用库就可以了
+
+```
+import expanddouban
+html = expanddouban.getHtml(url)
+```
 
 
-任务2: 定义电影类
+任务3: 定义电影类
 -----
 电影类应该包含以下成员变量
 
@@ -67,7 +89,7 @@ cover_link = “https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p4
 m = Movie(name, rate, location, category, info_link, cover_link)
 ```
 
-任务3: 获得豆瓣电影的信息。
+任务4: 获得豆瓣电影的信息
 -----
 通过URL返回的HTML，我们可以获取网页中所有电影的名称，评分，海报图片链接和页面链接，同时我们在任务1构造URL时，也有类型和地区的信息，因为我们可以完整得构造每一个电影，并得到一个列表。
 
@@ -81,7 +103,9 @@ def getMovies(category, location)
 	return []
 ```
 
-任务4: 构造电影信息数据表
+提示：你可能需要在这个任务中，使用前三个任务的代码或函数。
+
+任务5: 构造电影信息数据表
 -----
 获取每个类型，每个地区的电影信息后，我们可以获得一个包含所有类型，所有地区，评分超过9分的完整电影对象的列表。将列表输出到文件 `movies.csv`，格式如下:
 
@@ -91,7 +115,7 @@ def getMovies(category, location)
 ....
 ```
 
-任务5: 统计电影数据
+任务6: 统计电影数据
 -----
 统计在每个电影类别中，数量排名前三的地区有哪些，分别占此类别电影总数的百分比为多少？
 
@@ -99,6 +123,19 @@ def getMovies(category, location)
 
 项目提交
 -----
+在提交之前，根据项目评审标准检查你的项目。Udacity 的项目评审员会根据这个标准对你的项目给予反馈，并对你的代码给出有用的指导。
+
+| 标准| 符合要求|
+| ------------- |:-------------|
+| 代码质量      | 你的代码应具有良好的结构与可读性，请遵循本课程所指出的最佳规范。 |
+| 不打印任何内容      | 你的代码应不会打印任何内容，而只是创建或修改两个文件 `movies.csv` 和 `output.txt` |
+| 完成任务1  | 实现函数`getMovieUrl`|
+| 完成任务2  | 通过 URL 获得豆瓣电影页面的 HTML |
+| 完成任务3  | 定义电影类，并实现其构造函数|
+| 完成任务4  | 通过类型和地区构造URL，并获取对应的HTML。解析 HTML 中的每个电影元素，并构造电影对象列表 |
+| 完成任务5  | 将电影信息输出到 `movies.csv`。 包含所有类别，地区以及对应的电影信息|
+| 完成任务6  | 将电影的统计结果输出到 `output.txt`。包含在每个电影类别中，数量排名前三的地区有哪些，分别占此类别电影总数的百分比为多少。|
+
 请提交submit.zip, 包含以下文件：
 
 - DoubanCrawler.py
