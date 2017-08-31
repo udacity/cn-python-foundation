@@ -48,11 +48,9 @@ def getMovieUrl(category, location)
 在课程中，我们使用库 `requests` get 函数。
 
 ```
-def getHtml(url):
-	import requests
-	response = requests.get(url)
-	html = response.text
-	return html
+import requests
+response = requests.get(url)
+html = response.text
 ```
 
 这样的做法对大多数豆瓣电影列表页面来说没什么问题。但有些列表需要多页显示，我们需要不断模拟点击**加载更多**按钮来显示这个列表上的全部电影。
