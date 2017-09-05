@@ -13,12 +13,12 @@ class MovieSpider(scrapy.Spider,url):
         while True:
             next_url = driver.find_element_by_xpath('//div[@class="more"]/a')
             try:
-                # parse the body your webdriver has
-                self.parse(driver.page_source)
                 # click the button to go to next page
                 next_url.click()
             except:
                 break
+                # parse the body your webdriver has
+                self.parse(driver.page_source)
         driver.close()
 
     def parse(self, body):
@@ -26,7 +26,7 @@ class MovieSpider(scrapy.Spider,url):
         html = Selector(text=body)
         return html
         """
-        # parse it, students should start from here
+        # parse it
         for movie in html.css('.list-wp'):
             item = dict()
             item['title'] = movie.css('.title::text').extract_first()
