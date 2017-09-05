@@ -2,10 +2,10 @@ import scrapy
 from scrapy import Selector
 from selenium import webdriver
 
-class MovieSpider(scrapy.Spider):
+class MovieSpider(scrapy.Spider,url):
     name = "movie_spider"
     allowed_domains = ['douban.com']
-    start_url = ['https://movie.douban.com/tag/#/?sort=S&range=9,10&tags=%E7%94%B5%E5%BD%B1,%E7%BE%8E%E5%9B%BD,%E5%96%9C%E5%89%A7']
+    start_url = [url]
 
     def start_request(self):
         self.driver = webdriver.Firefox()
@@ -23,11 +23,18 @@ class MovieSpider(scrapy.Spider):
 
     def parse(self, body):
         # create Selector from html string
-        sel = Selector(text=body)
-        # parse it
-        for article in sel.css('.list-wp'):
+        html = Selector(text=body)
+        return html
+        """
+        # parse it, students should start from here
+        for movie in html.css('.list-wp'):
             item = dict()
-            item['title'] = article.css('.title::text').extract_first()
-            item['rate'] = article.css('.rate::text').extract_first()
+            item['title'] = movie.css('.title::text').extract_first()
+            item['rate'] = movie.css('.rate::text').extract_first()
             # extract link (::attr(href))
             yield item
+        """
+
+def getHtml(url):
+    movie = MovieSpider(url)
+    return movie.start_request()
