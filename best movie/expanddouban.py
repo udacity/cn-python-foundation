@@ -7,6 +7,13 @@ def getHtml(url):
     browser.get(url)
     time = 1 #second for the broswer to wait
     WebDriverWait(browser, time)
+    while True:
+        try:
+            next_button = browser.find_element_by_class_name("more")
+            next_button.click()
+            print("click")
+        except:
+            break
     html = browser.page_source
     browser.quit()
     return html
