@@ -4,14 +4,14 @@
 项目概述
 ----
 
-在这个项目中, 你将会从豆瓣电影的网页中获取各个地区，各个类别的高评分电影，收集他们的名称，评分，电影页面的链接和电影海报的链接。最后在收集的数据进行统计。
+在这个项目中, 你将会从豆瓣电影的网页中获取各个地区、各个类别的高评分电影，收集他们的名称、评分、电影页面的链接和电影海报的链接。最后对收集的数据进行简单的统计。
 
-这个项目不会提供任何 python 代码，你应该新建文件 `DoubanCrawler.py`, 并在其中逐个完成每个任务。注意这些任务并不是并列关系，后面的任务很可能需要用到前面的任务的代码或函数，前面任务的对错也很可能会影响后面任务的对错。你可能会需要多次的来回修改才能完成项目。
+这个项目不会提供任何 python 代码，你应该新建文件 `DoubanCrawler.py`, 并在其中逐个完成每个任务。注意这些任务并不是并列关系，后面的任务很可能需要用到前面任务的代码或函数，前面任务的对错也很可能会影响后面任务的对错。你可能会需要多次来回修改才能完成项目。
 
-当然，即使你还没有全部完成，也可以提交项目来获取一定的建议和反馈。
+当然，即使你还没有全部完成，也可以提交项目来获取一些建议和反馈。
 
 
-任务1: 获取每个地区，每个类型页面的URL
+任务1: 获取每个地区、每个类型页面的URL
 ----
 你可以从下面这个网址，按照分类和地区查看电影列表。
 
@@ -25,17 +25,17 @@ https://movie.douban.com/tag/#/?sort=S&range=9,10&tags=电影
 -  `range=9,10`: 评分范围 9 ~ 10
 -  `tags=电影`: 标签为电影
 
-其中参数tags可以包含多个以逗号风格的标签，你可以分别选取类型和地区来进行进一步的筛选，例如选择类型为`剧情`，地区为`美国`, 那么 URL 为
+其中参数tags可以包含多个以逗号分隔的标签，你可以分别选取类型和地区来进行进一步的筛选，例如选择类型为`剧情`，地区为`美国`, 那么 URL 为
 
 ```
 https://movie.douban.com/tag/#/?sort=S&range=9,10&tags=电影,剧情,美国
 ```
 
-实现函数构造对应类型和地区的URL地址 
+实现函数构造对应类型和地区的URL地址
 
 ```
 """
-return a string corresponding to the URL of douban movie lists given category and location. 
+return a string corresponding to the URL of douban movie lists given category and location.
 """
 def getMovieUrl(category, location)
 	url = None
@@ -77,7 +77,7 @@ html = expanddouban.getHtml(url)
 同时，你应该实现电影类的构造函数。
 
 ```
-name = “肖生克的救赎”
+name = “肖申克的救赎”
 rate = 9.6
 location = "美国"
 category = "剧情"
@@ -89,13 +89,13 @@ m = Movie(name, rate, location, category, info_link, cover_link)
 
 任务4: 获得豆瓣电影的信息
 -----
-通过URL返回的HTML，我们可以获取网页中所有电影的名称，评分，海报图片链接和页面链接，同时我们在任务1构造URL时，也有类型和地区的信息，因为我们可以完整得构造每一个电影，并得到一个列表。
+通过URL返回的HTML，我们可以获取网页中所有电影的名称，评分，海报图片链接和页面链接，同时我们在任务1构造URL时，也有类型和地区的信息，因为我们可以完整的构造每一个电影，并得到一个列表。
 
 实现以下函数
 
 ```
 """
-return a list of Movie objects with the given category and location. 
+return a list of Movie objects with the given category and location.
 """
 def getMovies(category, location)
 	return []
@@ -105,10 +105,10 @@ def getMovies(category, location)
 
 任务5: 构造电影信息数据表
 -----
-获取每个类型，每个地区的电影信息后，我们可以获得一个包含所有类型，所有地区，评分超过9分的完整电影对象的列表。将列表输出到文件 `movies.csv`，格式如下:
+获取每个类型，每个地区的电影信息后，我们可以获得一个包含所有类型、所有地区，评分超过9分的完整电影对象的列表。将列表输出到文件 `movies.csv`，格式如下:
 
 ```
-肖生克的救赎,9.6,美国,剧情,https://movie.douban.com/subject/1292052/,https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p480747492.jpg
+肖申克的救赎,9.6,美国,剧情,https://movie.douban.com/subject/1292052/,https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p480747492.jpg
 霍伊特团队,9.0,香港,动作,https://movie.douban.com/subject/1307914/,https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2329853674.jpg
 ....
 ```
@@ -131,7 +131,7 @@ def getMovies(category, location)
 | 完成任务2  | 通过 URL 获得豆瓣电影页面的 HTML |
 | 完成任务3  | 定义电影类，并实现其构造函数|
 | 完成任务4  | 通过类型和地区构造URL，并获取对应的HTML。解析 HTML 中的每个电影元素，并构造电影对象列表 |
-| 完成任务5  | 将电影信息输出到 `movies.csv`。 包含所有类别，地区以及对应的电影信息|
+| 完成任务5  | 将电影信息输出到 `movies.csv`。 包含所有类别、地区以及对应的电影信息|
 | 完成任务6  | 将电影的统计结果输出到 `output.txt`。包含在每个电影类别中，数量排名前三的地区有哪些，分别占此类别电影总数的百分比为多少。|
 
 请提交submit.zip, 包含以下文件：
