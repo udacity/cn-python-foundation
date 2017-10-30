@@ -23,6 +23,6 @@ def getHtml(url, loadmore = False, waittime = 2):
     return html
 
 # for test
-url = "https://movie.douban.com/tag/#/?sort=S&range=9,10&tags=电影,剧情,美国"
-html = getHtml(url)
-print(html) 
+#url = "https://movie.douban.com/tag/#/?sort=S&range=9,10&tags=电影,剧情,美国"
+#html = getHtml(url)
+#print(html) 

@@ -39,7 +39,7 @@ return a string corresponding to the URL of douban movie lists given category an
 """
 def getMovieUrl(category, location)
 	url = None
-	retrun url
+	return url
 ```
 任务2: 获取电影页面 HTML
 -----
@@ -62,6 +62,7 @@ import expanddouban
 html = expanddouban.getHtml(url)
 ```
 
+getHtml 还有两个可选参数，你 **很有可能** 需要传入非默认的值。
 
 任务3: 定义电影类
 -----
@@ -116,6 +117,8 @@ def getMovies(category, location)
 -----
 统计你所选取的每个电影类别中，数量排名前三的地区有哪些，分别占此类别电影总数的百分比为多少？
 
+你可能需要自己把这个任务拆分成多个步骤，统计每个类别的电影个数，统计每个类别每个地区的电影个数，排序找到最大值，做一定的数学运算等等，相信你一定可以的！
+
 请将你的结果输出文件 `output.txt`
 
 项目提交
@@ -138,5 +141,6 @@ def getMovies(category, location)
 - DoubanCrawler.py
 - movies.csv
 - output.txt
+- 不要提交其他任何文件
 
 注意运行 `python DoubanCrawler.py` 后，脚本应该会在同一个文件夹生成 `movies.csv` 和 `output.txt` 两个文件。
