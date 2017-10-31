@@ -64,6 +64,8 @@ html = expanddouban.getHtml(url)
 
 getHtml 还有两个可选参数，你 **很有可能** 需要传入非默认的值。
 
+要使用这个写好的函数，你需要安装 selenium 和 chromedriver，你可以参考[这份指南](https://github.com/udacity/cn-python-foundation/blob/master/best%20movie/install_chromedriver.md)
+
 任务3: 定义电影类
 -----
 电影类应该包含以下成员变量
