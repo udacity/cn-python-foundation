@@ -16,15 +16,11 @@
 ![](https://i.imgur.com/3UBl9pD.png)
 
 ## 3 解压文件
-将下载好的**chromedriver_win32.zip**解压后是一个exe文件，将其复制到Chrome安装目录（通常为**C:\Program Files (x86)\Google\Chrome\Application**）
+将下载好的**chromedriver_win32.zip**解压后是一个exe文件，将其复制到Python安装目录
 
-## 4 配置环境变量
+### 注意 安装目录找不到怎么办
 1. 打开控制面板下的高级系统设置，点击**环境变量**
 
  ![](https://i.imgur.com/axYVodW.png)
 
-2. 双击path,手动添加**C:\Program Files (x86)\Google\Chrome\Application\chromedriver\chromedriver.exe**，注意记得用**;**隔开
-
- ![](https://i.imgur.com/IkUr09N.png)
-
-3. 确定后 **大功告成~**
+2. 双击path,里面带python那个就是了（例如**C:\Users\Big Geng\AppData\Local\Programs\Python\Python36**）
