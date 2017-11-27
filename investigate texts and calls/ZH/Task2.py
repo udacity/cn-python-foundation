@@ -3,6 +3,7 @@
 你将在以后的课程中了解更多有关读取文件的知识。
 """
 import csv
+
 with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
@@ -22,4 +23,37 @@ September 2016.".
 如果键已经存在于字典内，为键所对应的值加上对应数值；
 如果键不存在于字典内，将此键加入字典，并将它的值设为给定值。
 """
+def makeDics(calls):
+    """
+    将calls电话列表生成字典
+    """
+    result = {}
+    for call in calls:
+        caller = call[0]
+        receiver = call[1]
+        time = float(call[3])
+        if caller in result:
+            result[caller] += time
+        else:
+            result[caller] = time
+        # 接电话者
+        if receiver in result:
+            result[receiver] += time
+        else:
+            result[receiver] = time
+    return result
 
+# print(makeDics(calls))
+
+def findLongestRecord(calls_dic):
+    longest_phone = ""
+    longest_time = 0
+    for key in calls_dic:
+        if (calls_dic[key] > longest_time):
+            longest_time = calls_dic[key]
+            longest_phone = key
+    
+    return longest_phone
+
+
+print(findLongestRecord(makeDics(calls)))

@@ -26,3 +26,65 @@ with open('calls.csv', 'r') as f:
 电话号码不能重复，每行打印一条，按字母顺序输出。
 """
 
+#统计打电话数据
+def countingCaller(calls):
+    result = {}
+    for call in calls:
+        caller = call[0].strip()
+        receiver = call[1].strip()
+
+        if caller in result:
+            result[caller]['call'] += 1
+        else:
+            result[caller] = {}
+            result[caller]["call"] = 1
+            result[caller]["receive"] = 0
+
+        if receiver in result:
+            result[receiver]["receive"] += 1
+        else:
+            result[receiver] = {}
+            result[receiver]["receive"] = 1
+            result[receiver]["call"] = 0
+    return result
+
+#统计发短信信息
+def countingTexter(texts):
+    result = {}
+    for text in texts:
+        sender = text[0].strip()
+        receiver = text[1].strip()
+
+        if sender in result:
+            result[sender]['send'] += 1
+        else:
+            result[sender] = {}
+            result[sender]["send"] = 1
+            result[sender]["receive"] = 0
+
+        if receiver in result:
+            result[receiver]["receive"] += 1
+        else:
+            result[receiver] = {}
+            result[receiver]["receive"] = 1
+            result[receiver]["send"] = 0
+    return result
+
+
+def findSellerPhone(callers,messagers):
+    result = [] #销售电话
+    for caller in callers:
+        # 找出只打电话从没收到电话的号码
+        if (callers[caller]['call'] > 0) and (callers[caller]['receive'] == 0):
+            # 查找此号码是否收发短信
+            if (caller not in messagers) :
+                result.append(caller)
+    return result
+
+
+callers = countingCaller(calls)
+messagers = countingTexter(texts)
+
+print("\n".join(findSellerPhone(callers,messagers)))
+# print(result)
+# print(countingTexter(texts))
