@@ -79,4 +79,4 @@ def countingPercent(calls):
             result_all += 1
     return round((result_080/result_all * 100),2)
 
-print("{}%".format(countingPercent(calls)))
+print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(countingPercent(calls)))

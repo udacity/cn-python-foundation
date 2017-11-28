@@ -28,4 +28,4 @@ for call in calls:
     all_telephone_numbers.add(call[0])
     all_telephone_numbers.add(call[1])
 
-print(len(all_telephone_numbers))
+print("There are {} different telephone numbers in the records.".format(len(all_telephone_numbers)))

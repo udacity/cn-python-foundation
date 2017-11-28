@@ -53,7 +53,7 @@ def findLongestRecord(calls_dic):
             longest_time = calls_dic[key]
             longest_phone = key
     
-    return longest_phone
+    return longest_phone, longest_time
 
-
-print(findLongestRecord(makeDics(calls)))
+phone , time = findLongestRecord(makeDics(calls))
+print("{} spent the longest time, {} seconds, on the phone during September 2016.".format(phone,time))

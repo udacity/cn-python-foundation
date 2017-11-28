@@ -79,12 +79,14 @@ def findSellerPhone(callers,messagers):
             # 查找此号码是否收发短信
             if (caller not in messagers) :
                 result.append(caller)
+    result.sort()
     return result
 
 
 callers = countingCaller(calls)
 messagers = countingTexter(texts)
 
+print("These numbers could be telemarketers: ")
 print("\n".join(findSellerPhone(callers,messagers)))
 # print(result)
 # print(countingTexter(texts))
