@@ -23,6 +23,6 @@ with open('calls.csv', 'r') as f:
 请输出如下内容
 "These numbers could be telemarketers: "
 <list of numbers>
-电话号码不能重复，每行打印一条，按字母顺序输出。
+电话号码不能重复，每行打印一条，按字典顺序排序后输出。
 """
 
