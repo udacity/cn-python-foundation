@@ -39,3 +39,44 @@ with open('calls.csv', 'r') as f:
 to other fixed lines in Bangalore."
 注意：百分比应包含2位小数。
 """
+
+#第一部分
+def findReceiver(calls):
+    result = []
+    for call in calls:
+        caller = call[0]
+        receiver = call[1]
+        if caller.find("(080)") > -1:
+            tmp = analysePrefixPhoneNumber(receiver)
+            if tmp != None and tmp not in result:
+                result.append(tmp)
+    result.sort()
+    return result
+
+
+def analysePrefixPhoneNumber(number):
+    result = None
+    start_index = number.find("(")
+    end_index = number.find(")")
+    if start_index > -1 and end_index > -1:
+        result = number[start_index+1:end_index]
+    else:
+        result = number[:4]
+    return result
+
+print("\n".join(findReceiver(calls)))
+
+#第二部分
+def countingPercent(calls):
+    result_all = 0
+    result_080 = 0
+    for call in calls:
+        caller = call[0]
+        receiver = call[1]
+        if caller.find("(080)") > -1:
+            if receiver.find("(080)") > -1:
+                result_080 += 1
+            result_all += 1
+    return round((result_080/result_all * 100),2)
+
+print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(countingPercent(calls)))
