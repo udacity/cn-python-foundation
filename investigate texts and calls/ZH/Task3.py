@@ -23,7 +23,6 @@ with open('calls.csv', 'r') as f:
  - 移动电话没有括号，但数字中间添加了
    一个空格，以增加可读性。一个移动电话的移动前缀指的是他的前四个
    数字，并且以7,8或9开头。
- - 电话促销员的号码没有括号或空格 , 但以140开头。
 
 输出信息:
 "The numbers called by people in Bangalore have codes:"
