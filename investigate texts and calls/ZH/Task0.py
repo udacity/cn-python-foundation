@@ -6,13 +6,24 @@ import csv
 with open('texts.csv', 'r') as f:
     reader = csv.reader(f)
     texts = list(reader)
+    incoming number, answering number, time = zip(*texts)
+    incoming number = incoming number[0]
+    answering number = answering number[0]
+    time = time[0]
+print("First record of texts, {} texts {} at time {}".format(incoming number, answering number, time))
 
 with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
+    incoming number, answering number, time, during = zip(*calls)
+    incoming number = incoming number[-1]
+    answering number = answering number[-1]
+    time = time[-1]
+    during = during[-1]
+print("Last record of calls, {} calls {} at time {}, lasting {} seconds".format(incoming number, answering number, time, during number))
+    
+      
 
-
-"""
 任务0:
 短信记录的第一条记录是什么？通话记录最后一条记录是什么？
 输出信息:
