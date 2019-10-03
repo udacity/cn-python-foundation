@@ -34,8 +34,7 @@ in Bangalore.
  - Mobile numbers have no parentheses, but have a space in the middle
    of the number to help readability. The prefix of a mobile number
    is its first four digits, and they always start with 7, 8 or 9.
- - Telemarketers' numbers have no parentheses or space, but they start
-   with the area code 140.
+
 
 Print the answer as part of a message:
 "The numbers called by people in Bangalore have codes:"
