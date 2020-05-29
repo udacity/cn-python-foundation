@@ -20,3 +20,5 @@ with open('calls.csv', 'r') as f:
 "Last record of calls, <incoming number> calls <answering number> at time <time>, lasting <during> seconds"
 """
 
+
+print(texts)
