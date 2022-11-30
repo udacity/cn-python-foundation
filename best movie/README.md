@@ -79,6 +79,9 @@ getHtml 还有两个可选参数，你 **很有可能** 需要传入非默认的
 
 同时，你应该实现电影类的构造函数。
 
+如果你不知道如何使用 Python 定义一个类，可参考优达学城这门免费的[Python 课程](https://cn.udacity.com/course/programming-foundations-with-python--ud036)，学完其中的三、四小节内容，你就可以完整地定义一个类出来了。
+
+
 ```
 name = “肖申克的救赎”
 rate = 9.6
@@ -88,6 +91,14 @@ info_link = "https://movie.douban.com/subject/1292052/"
 cover_link = “https://img3.doubanio.com/view/movie_poster_cover/lpst/public/p480747492.jpg”
 
 m = Movie(name, rate, location, category, info_link, cover_link)
+```
+
+*有些同学选择使用一个列表保存影片信息，而不去定义这个类，这种做法也是完全可以的，选择你一种你喜欢的方式就好^_^*
+```
+# movie list
+[[name, rate, localtion, category, info_link, cover_link],
+ ...
+]
 ```
 
 任务4: 获得豆瓣电影的信息
